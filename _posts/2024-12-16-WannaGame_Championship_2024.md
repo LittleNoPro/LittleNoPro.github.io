@@ -1,8 +1,8 @@
 ---
 title: 'WannaGame Championship 2024'
 date: 2024-12-16 00:00:00 +0700
-categories: [ctf]
-tags: [Crypto]
+categories: [CTF Write-up]
+tags: [RSA, AES]
 published: true
 description: "Write-up for WannaGame Championship 2024"
 ---

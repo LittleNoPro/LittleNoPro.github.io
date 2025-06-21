@@ -1,8 +1,8 @@
 ---
 title: 'Padding Oracle Attack'
 date: 2024-12-20 00:00:00 +0700
-categories: [ctf]
-tags: [Crypto]
+categories: [CTF Write-up]
+tags: [AES]
 published: true
 description: "Introduce to Padding Oracle Attack"
 ---
