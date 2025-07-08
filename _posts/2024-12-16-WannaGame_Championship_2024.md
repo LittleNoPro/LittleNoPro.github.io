@@ -7,7 +7,7 @@ published: true
 description: "Write-up for WannaGame Championship 2024"
 ---
 
-Vừa qua mình cùng team UIT.0r2 đã thử sức với WannaGame Championship 2024 và mình đã solve được 2 bài Crypto.
+Vừa qua mình đã thử sức với WannaGame Championship 2024 và mình đã solve được 2 bài Crypto.
 
 ## random
 ### Challenge
