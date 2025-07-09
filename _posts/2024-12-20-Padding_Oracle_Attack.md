@@ -74,8 +74,7 @@ Như ta đã biết, Oracle trả về `True` khi các padding ở cuối của 
 
 Ta sẽ brute force 255 giá trị của $t_i$ (byte cuối cùng của $C_1$) đến khi nào Oracle hợp lệ (tức là byte cuối của $P_2$ là `\x01`). Từ đó, ta tính được $x_i = t_i \oplus 01$. Sau khi tìm được $x_i$, ta chỉ cần lấy byte cuối cùng của $C_1$ (chính thức) XOR với $x_i$ là ra được byte chính thức cuối cùng của $P_2$.
 
-Khi tìm được byte cuối cùng rồi, thì ta tiếp tục recover từ cuối về, thay vì padding là `\x01` thì bây giờ sẽ là `\x02\x02`, `\x03\x03\x03`, ...
-
+Khi tìm được byte cuối cùng rồi, thì ta tiếp tục recover từ cuối về, thay vì padding là `\x01` thì bây giờ sẽ là `\x02\x02`, `\x03\x03\x03`, ....
 Code:
 ```python
 BLOCK_SIZE = 16
