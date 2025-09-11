@@ -28,4 +28,15 @@ Một **đồng cấu nhóm (Homomorphism)** giữa hai nhóm $G,H$ là một á
 
 **Theorem:** Nếu $x \in G$ có bậc là $mn$ với $m,n$ **nguyên tố cùng nhau**, thì $x$ có thể được viết dưới dạng $x=uv$ trong đó $u$ có bậc là $m$ và $v$ có bậc $n$.
 
-**Theorem:** Một tập con khác rỗng $H$ thuộc $G$ là một **subgroup** khi và chỉ khi $H$ đóng đối với phép nhân
+Ta viết $H \le G$ để biểu diễn rằng $H$ là một **subgroup** của $G$. Trong trường hợp $H \ne G$ thì ta viết $H < G$.
+
+**Theorem:** Một tập con khác rỗng $H \subseteq G$ là một **subgroup** khi và chỉ khi $H$ đóng dưới phép nhân.
+
+**Theorem:** Một tạp con khác rỗng $H \subset G$ là một **subgroup** khi và chỉ khi $H^2 \subset H$.
+
+**Lemma:** Với một **subgroup** $H$, với mọi $h \in H$ ta có $hH = H = Hh$.
+
+**Corollary:** Với mọi tập $S \subset H$ ta có $SH = H = HS$.
+
+**Theorem:** Cho $g \in G$ và $H \le G$. Khi đó $g^{-1}Hg$ là một **subgroup** của $G$ và **đẳng cấu (isomorphic)** với $H$.
+
