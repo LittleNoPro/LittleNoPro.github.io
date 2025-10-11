@@ -58,4 +58,10 @@ $$
 
 **Corollary 2:** Cho $G$ là một **nhóm hữu hạn cấp nguyên tố**. Khi dods $G$ không có nhóm con nào và $G$ là một nhóm **cyclic**.
 
-# Cyclic Group
+# Cyclic Groups
+
+Nhóm **cyclic** $G$ là một nhóm có thể được sinh ra bởi một phần tử $a$, khi đó mọi phần tử trong $G$ đều có dạng là $a^i$ với các số nguyên $i$. Ta ký hiệu một nhóm **cyclic** có cấp $n$ là $\mathbb{Z}_n$, vì nhóm cộng của $\mathbb{Z}_n$ là một nhóm **cyclic** cấp $n$.
+
+**Theorem:** mọi nhóm con của nhóm **cyclic** đều là nhóm **cyclic**. Nếu $G$ tồn tại duy nhất một nhóm con có cấp $d$, nhóm này được sinh bởi $a^{\mid G \mid / d}$.
+
+**Theorem:** Mọi nhóm có **cấp hợp số** đều có **nhóm con thực sự**.
