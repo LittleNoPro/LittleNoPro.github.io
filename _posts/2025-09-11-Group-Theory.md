@@ -7,7 +7,7 @@ published: true
 description: "Some theorems and lemmas of Group Theory"
 ---
 
-# Nhóm (Groups)
+# Groups
 Một **nhóm** là một tập hợp $G$ cùng với một phép toán nhị phân $\cdot$ sao cho:
 1. Với mọi $x, y \in G$, ta có $x \cdot y \in G$ (tính **đóng** **closure**).
 2. Tồn tại một **phần tử đơn vị** $1 \in G$ sao cho $x \cdot 1 = 1 \cdot x = x$ với mọi $x \in G$ (phần tử đơn vị **identity**).
@@ -40,3 +40,22 @@ Ta viết $H \le G$ để biểu diễn rằng $H$ là một **subgroup** của 
 
 **Theorem:** Cho $g \in G$ và $H \le G$. Khi đó $g^{-1}Hg$ là một **subgroup** của $G$ và **đẳng cấu (isomorphic)** với $H$.
 
+# Lagrange's Theorem
+
+**Lemma:** gọi $H$ là một **subgroup** của $G$. Cho $r, c \in G$. Khi đó $Hr = Hs$ khi và chỉ khi $rs^{-1} \in H$. Ngược lại $Hr, Hs$ không có phần tử chung nào. Tương tự, $rH = sH$ khi và chỉ khi $s^{-1}r \in H$, ngược lại $rH, sH$ không có phần tử chung nào.
+
+**Proof:** Nếu $rs^{-1}=h \in H$, thì $H = Hh = (Hr)s^{-1}$. Nhân cả 2 vế với $s$ ở bên phải ta có $Hs = Hr$. Ngược lại, nếu $Hr = Hs$, thì vì $r \in Hr$ (vì $1 \in H$) ta có $r = h's$ với một $h' \in H$ nào đó. Nhân vào bên phải $s^{-1}$ cho thấy $rs^{-1} \in H.$
+
+Bây giờ giả sử $Hr = Hs$ có một phần tử chung nào đó, tức là $h_1r = h_2s$ với $h_1,h_2 \in H$ nào đó. Điều này suy ra $rs^{-1} = h_1^{-1}h_2 \in H$, do đó $Hr = Hs$ theo chứng minh ở trên.
+
+**Lagrange's Theorem:** Cho $G$ là một nhóm hữu hạn và $H$ là một nhóm con của $G$. Khi đó, cấp của $H$ là ước số của cấp của $G$. Kí hiệu toán học:
+
+$$
+|G| = n|H|
+$$
+
+**Corollary 1:** Cho $G$ là một nhóm hữu hạn và phần tử $g \in G$. Khi đó cấp của $g$ sẽ là ước của $\mid G\mid$.
+
+**Corollary 2:** Cho $G$ là một **nhóm hữu hạn cấp nguyên tố**. Khi dods $G$ không có nhóm con nào và $G$ là một nhóm **cyclic**.
+
+# Cyclic Group
