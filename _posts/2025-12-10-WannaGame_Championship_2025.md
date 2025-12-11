@@ -191,6 +191,7 @@ Và nhìn vào `struct` được tạo trong file `chall.c` ta thấy:
 Vì struct `variable` được định nghĩa với `packed` nên compiler sẽ không padding byte nào giữa các biến. Khi đó `v.N` sẽ nằm ngay sau `v.msg`, suy ra byte bị tràn **sẽ là byte đầu tiên của N**.
 
 Tận dụng bug này, mình đã thử từng giá trị byte có thể (256 giá trị) để thay thế byte đầu tiên của `N` để tìm một giá trị `N'` sao cho `N'` là một số nguyên tố. Khi đó `phi(N') = N' - 1` từ đó tính được `d` và ký cho `target`. Lí do làm như vậy là bởi vì hàm `verify()` đó sử dụng luôn giá trị `N` sau khi bị ghi đè.
+
 Solve script:
 ```python
 from pwn import *
@@ -336,6 +337,7 @@ int main() {
 }
 ```
 Bài này là một phiên bản khó hơn rất nhiều so với bài trước khi đã cách check của hàm `verify()`, thay vì sử dụng giá trị `N'` đã bị ghi đè thì nó sẽ tính lại `N` ban đầu từ các giá trị `p, q, r`. Nhưng vì lí do như vậy, hướng đi duy nhất của ta sẽ là tìm cách recover `p, q, r` từ việc sử dụng `sign()` với `N_fault`. **Bug base85** của bài `Boring Signing` vẫn được sử dụng trong bài này => Ta có thể thay đổi byte đầu tiên của `N_origin` theo ý của mình. Nhưng làm sao để recover `p, q, r`?
+
 Trong lúc giải đang diễn ra, mình đã osint được một cái [paper](https://eprint.iacr.org/2011/388.pdf) rất giống bài này chỉ khác ở chỗ trong paper nó sử dụng `N = pq` (còn bài này thì `N = pqr`). Paper này nói về cách attack chống lại **RSA-CRT Signature**. Cụ thể hơn:
 
 Ta có: $\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \sigma_p = H(m)^d \pmod p, \ \ \ \ \sigma_q = H(m)^d \pmod q, \ \ \ \ \sigma_r = H(m)^d \pmod r$
@@ -453,6 +455,7 @@ Giả sử $W = \text{span}(\sigma_p, \sigma_q, \sigma_r)$, vì 3 vector đó đ
 Khi đã có được $\sigma_p$ rồi thì ta có thể recover $p = \text{GCD}(\frac{v_i}{\sigma_{p,i}}, N)$, tương tự với $q, r$.
 
 Sau khi đã recover được $p, q, r$ thì việc còn lại rất đơn giản là tạo $\phi(N), d$ sau đó ký **target** rồi gửi chữ ký đó cho server và lấy flag.
+
 Solve script:
 ```python
 from pwn import *
